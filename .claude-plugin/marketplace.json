@@ -4,11 +4,11 @@
     "name": "Alireza Rezvani",
     "url": "https://alirezarezvani.com"
   },
-  "description": "343 production-ready skill packages for Claude AI across 17 domains: engineering advanced (78, incl. v2.9.0 workflow-builder for Claude Code Workflow-tool authoring), engineering core (51), marketing (46 — incl. AEO/Answer Engine Optimization), c-level advisory (66), product (17), regulatory/QMS (18), compliance-os (9), project management (9), business growth (5), finance (4), productivity (6), marketing top-level (1), research (8), research-ops (5, v2.9.0), business-operations (7), commercial (8), and markdown-html (5, v2.10.3 — markdown-to-interactive-HTML converter complete: orchestrator + design-system + md-document long-form + md-review code-review + md-slides slide-deck). Includes 548 Python tools, 691 reference documents, 51+ agents, 90+ slash commands across 64 marketplace plugins.",
+  "description": "344 production-ready skill packages for Claude AI across 17 domains: engineering advanced (78, incl. v2.9.0 workflow-builder for Claude Code Workflow-tool authoring), engineering core (51), marketing (46 — incl. AEO/Answer Engine Optimization), c-level advisory (66), product (17), regulatory/QMS (18), compliance-os (9), project management (9), business growth (5), finance (4), productivity (6), marketing top-level (1), research (8), research-ops (5, v2.9.0), business-operations (7), commercial (8), and markdown-html (5, v2.10.3 — markdown-to-interactive-HTML converter complete: orchestrator + design-system + md-document long-form + md-review code-review + md-slides slide-deck). Includes 548 Python tools, 695 reference documents, 51+ agents, 90+ slash commands across 65 marketplace plugins.",
   "homepage": "https://github.com/alirezarezvani/claude-skills",
   "repository": "https://github.com/alirezarezvani/claude-skills",
   "metadata": {
-    "description": "343 production-ready skills across 17 domains (engineering, engineering-core, marketing, product, c-level, compliance-os, project management, RA/QM, business growth, finance, productivity, marketing top-level, research, research-ops, business-operations, commercial, markdown-html, plus standards). 548 Python tools, 691 reference guides, 51+ agents (cs-* + personas), 90+ slash commands across 64 marketplace plugins. v2.10.3 completes the markdown-html domain with md-slides — slide-deck converter (arrow-key / Space / PgDn / Home/End / P keyboard navigation + presenter mode with split-view clock + speaker notes + next-slide preview + URL-hash deep linking like #3 for direct slide jumps + @media print page-per-slide for browser-native PDF export). Reuses md-document's markdown parser; vanilla JS only (no framework runtime); Prism.js opt-in via --syntax. Joins md-review (v2.10.2 code-review converter), md-document (v2.10.1 long-form converter), and the v2.10.0 foundation (orchestrator + design-system). Compatible with Claude Code, Codex CLI, Gemini CLI, Cursor, OpenClaw, Hermes Agent, Mistral Vibe, and 5 more coding agents.",
+    "description": "344 production-ready skills across 17 domains (engineering, engineering-core, marketing, product, c-level, compliance-os, project management, RA/QM, business growth, finance, productivity, marketing top-level, research, research-ops, business-operations, commercial, markdown-html, plus standards). 548 Python tools, 695 reference guides, 51+ agents (cs-* + personas), 90+ slash commands across 65 marketplace plugins. v2.10.3 completes the markdown-html domain with md-slides — slide-deck converter (arrow-key / Space / PgDn / Home/End / P keyboard navigation + presenter mode with split-view clock + speaker notes + next-slide preview + URL-hash deep linking like #3 for direct slide jumps + @media print page-per-slide for browser-native PDF export). Reuses md-document's markdown parser; vanilla JS only (no framework runtime); Prism.js opt-in via --syntax. Joins md-review (v2.10.2 code-review converter), md-document (v2.10.1 long-form converter), and the v2.10.0 foundation (orchestrator + design-system). Compatible with Claude Code, Codex CLI, Gemini CLI, Cursor, OpenClaw, Hermes Agent, Mistral Vibe, and 5 more coding agents.",
     "version": "2.10.3"
   },
   "plugins": [
@@ -1448,6 +1448,24 @@
         "transcriptapi"
       ],
       "category": "marketing"
+    },
+    {
+      "name": "collab-proof",
+      "source": "./engineering/collab-proof",
+      "description": "Assisted retrospective: after a session, calibrates what Claude contributed vs what the developer drove. LLM-assessed 4-frame analysis with explicit rubric, zero dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "dong7812",
+        "url": "https://github.com/dong7812"
+      },
+      "keywords": [
+        "ai-collaboration",
+        "session-retrospective",
+        "git-analysis",
+        "decision-logging",
+        "collab-proof"
+      ],
+      "category": "engineering"
     }
   ]
 }
