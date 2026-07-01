@@ -141,11 +141,14 @@ def _build_area_served(areas: List[str]) -> List[Dict]:
 
 
 def _build_aggregate_rating(reviews: Dict) -> Optional[Dict]:
-    if not reviews or not reviews.get('count'):
+    # Require BOTH count and average — never fabricate a rating value. Google
+    # cross-checks aggregateRating against GBP; a made-up score risks a manual
+    # action (see references/local-schema-types.md).
+    if not reviews or not reviews.get('count') or not reviews.get('average'):
         return None
     return {
         "@type": "AggregateRating",
-        "ratingValue": str(reviews.get('average', '4.8')),
+        "ratingValue": str(reviews['average']),
         "bestRating": "5",
         "worstRating": "1",
         "ratingCount": str(reviews['count'])

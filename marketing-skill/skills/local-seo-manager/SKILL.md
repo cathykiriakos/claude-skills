@@ -263,7 +263,7 @@ Flag these without being asked:
 - **Service area pages < 500 words** — Google filters thin local pages. Flag for expansion.
 - **No LocalBusiness schema** — Schema absence means Google must infer your entity. Easy fix with big impact.
 - **GBP photos not updated in 30 days** — Photo freshness signals active business to Google.
-- **Review count < 50** — Under 50 reviews makes you non-competitive in most SF Bay Area markets.
+- **Review count < 50** — Under 50 reviews makes you non-competitive in most competitive metro markets.
 
 ---
 

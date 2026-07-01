@@ -40,6 +40,23 @@ def normalize_name(name: str) -> str:
     return name
 
 
+US_STATE_ABBREVIATIONS = {
+    'al': 'alabama', 'ak': 'alaska', 'az': 'arizona', 'ar': 'arkansas',
+    'ca': 'california', 'co': 'colorado', 'ct': 'connecticut', 'de': 'delaware',
+    'fl': 'florida', 'ga': 'georgia', 'hi': 'hawaii', 'id': 'idaho',
+    'il': 'illinois', 'in': 'indiana', 'ia': 'iowa', 'ks': 'kansas',
+    'ky': 'kentucky', 'la': 'louisiana', 'me': 'maine', 'md': 'maryland',
+    'ma': 'massachusetts', 'mi': 'michigan', 'mn': 'minnesota', 'ms': 'mississippi',
+    'mo': 'missouri', 'mt': 'montana', 'ne': 'nebraska', 'nv': 'nevada',
+    'nh': 'new hampshire', 'nj': 'new jersey', 'nm': 'new mexico', 'ny': 'new york',
+    'nc': 'north carolina', 'nd': 'north dakota', 'oh': 'ohio', 'ok': 'oklahoma',
+    'or': 'oregon', 'pa': 'pennsylvania', 'ri': 'rhode island', 'sc': 'south carolina',
+    'sd': 'south dakota', 'tn': 'tennessee', 'tx': 'texas', 'ut': 'utah',
+    'vt': 'vermont', 'va': 'virginia', 'wa': 'washington', 'wv': 'west virginia',
+    'wi': 'wisconsin', 'wy': 'wyoming', 'dc': 'district of columbia',
+}
+
+
 def normalize_address(address: str) -> str:
     """Lowercase, expand common abbreviations, strip punctuation."""
     address = address.lower()
@@ -54,10 +71,13 @@ def normalize_address(address: str) -> str:
         r'\bpl\b': 'place',
         r'\bsuite\b': 'ste',
         r'\bapt\b': 'apt',
-        r'\bca\b': 'california',
     }
     for pattern, replacement in replacements.items():
         address = re.sub(pattern, replacement, address)
+    # Expand US state abbreviations so "TX" vs "Texas" is caught for any state,
+    # not just California.
+    for abbr, full in US_STATE_ABBREVIATIONS.items():
+        address = re.sub(rf'\b{abbr}\b', full, address)
     address = re.sub(r'[^\w\s]', ' ', address)
     address = re.sub(r'\s+', ' ', address).strip()
     return address
